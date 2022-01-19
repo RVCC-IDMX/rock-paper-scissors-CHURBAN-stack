@@ -130,10 +130,11 @@
             //    b) What the computer chose
             //    c) Whether you won or not
             //You may need if statements somewhere around this task
-            var end = humanChoice;
-            //if (true) {
-            //    end = `The PC Chose`; 
-            //}
+            var end;// = humanChoice;
+            end = `You Chose ${choiceName[humanChoice -1]}, the Computer Chose ${choiceName[computerChoice -1 ]}`;
+            if (tied) end += ` IT'S A TIE!`;
+            else if (humanWins) end += ` YOU WIN!`;
+            else end += ` YOU LOSE!`;
             
             //STEP 4:
             //Reach out into the DOM with getElementById() and insert the end into the result div.
@@ -150,9 +151,6 @@
         document.getElementById("scissors").onclick = () => {
             rockPaperScissors(3);
         };
-
-        //STEP 5:
-        //Below, link up the other two buttons with an EventListener so that the user can click on them and activate the game.
 
     </script>
     
