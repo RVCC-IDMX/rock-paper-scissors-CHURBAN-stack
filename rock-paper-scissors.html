@@ -11,7 +11,7 @@
 
         }
         #bid{
-            border:1px solid black;
+            border:1px solid red;
             margin:20px;
             padding:20px;
             text-align:center;
@@ -93,7 +93,7 @@
             //1 is rock
             //2 is paper
             //3 is scissors
-            var computerChoice;
+            var computerChoice = dice(3);
 
             //This boolean value represents if the human won
             var humanWins = false;
@@ -104,8 +104,24 @@
             //STEP 2:
             //Check to see who won and set humanWins & tied
             //You'll need to build additional if statements
-            if () {}
-
+            
+            //Human picks rock
+            if (humanChoice == 1) {
+                if (computerChoice == 1) tied = true; //rock-rock
+                else if (computerChoice == 2) humanWins = false; //rock-paper
+                else humanWins = true; //rock-scissors
+            }
+            else if (humanChoice == 2) {
+                if (computerChoice == 2) tied = true; //rock-rock
+                else if (computerChoice == 3) humanWins = false; //rock-paper
+                else humanWins = true; //rock-scissors
+            }
+            else if (humanChoice == 3) {
+                if (computerChoice == 3) tied = true; //rock-rock
+                else if (computerChoice == 1) humanWins = false; //rock-paper
+                else humanWins = true; //rock-scissors
+            }
+    
             //STEP 3:
             //Build a string to display the results of the game
             //Put it in the end variable
@@ -115,20 +131,28 @@
             //    c) Whether you won or not
             //You may need if statements somewhere around this task
             var end;
-
+            //if (true) {
+            //    end = ``; 
+            //}
+            
             //STEP 4:
             //Reach out into the DOM with getElementById() and insert the end into the result div.
-
+            document.getElementById("result").innerHTML = end;
         }
 
         //This code links in the Rock button so that when it's clicked it fires off the game.
         document.getElementById("rock").onclick = () => {
             rockPaperScissors(1);
         };
+        document.getElementById("paper").onclick = () => {
+            rockPaperScissors(2);
+        };
+        document.getElementById("scissors").onclick = () => {
+            rockPaperScissors(3);
+        };
 
         //STEP 5:
         //Below, link up the other two buttons with an EventListener so that the user can click on them and activate the game.
-
 
     </script>
     
