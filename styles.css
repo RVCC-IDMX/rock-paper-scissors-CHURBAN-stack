@@ -24,8 +24,21 @@ body {
     
 }
 button {
-    font: size 400px;
+    font-size: 40px;
     font-family:Georgia;
     padding: 15px;
 }
 
+#rock {
+background-color: black; 
+color: white; 
+}
+
+#paper {
+background-color: #f3feb0; 
+}
+
+#scissors {
+background-color: #812f33;
+color: white; 
+}
